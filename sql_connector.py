@@ -6,7 +6,7 @@ db_setting = {
     "host": "127.0.0.1",
     "port": 3306,
     "user": "root",
-    "password": "ru.4gj65k3",
+    "password": "password",
     "db": "mysql_test",
     "charset": "utf8",
 }
