@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import stock_crawler as s_c
 import stock_id
 import main_view as mv
@@ -163,3 +164,21 @@ if __name__ == "__main__":
     m_mv = mv.drawer()
     m_mv.draw_btn.configure(command=demo_func)
     m_mv.main_func()
+=======
+import stock_crawler
+import stock_id
+from time import sleep
+
+
+def main():
+    id_list = stock_id.get_id()
+    sleep(5)
+    for id in id_list:
+        print('id: ' + str(id))
+        stock_crawler.get_web_data(id)
+        sleep(5)
+
+
+if __name__ == "__main__":
+    main()
+>>>>>>> 21d8cf17534f0a4bcd436c63432222be86c0c91f
