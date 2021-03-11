@@ -1,5 +1,6 @@
 import plotly.graph_objects as go
 import plotly.express as px
+import stock_analyze as s_a
 from plotly.subplots import make_subplots
 import pandas as pd
 import sql_connector
@@ -38,8 +39,12 @@ def draw_chart(id):
         increasing_line_color="red",
         decreasing_line_color="green",
     )
+    anay = s_a.Stock_Analyze()
+    b_list = anay.set_breakpoint(df.loc[:, "收盤價"])
+    trace_1 = go.Scatter(x=df["日期"], y=b_list, name="BreakPoint")
+
     fig = make_subplots(specs=[[{"secondary_y": True}]])
-    # fig.add_trace(trace_1)
+    fig.update_yaxes(tickvals=b_list)
     fig.add_trace(trace_2)
     fig.update_traces(hoverinfo="text", text=h_text, selector=dict(type="candlestick"))
     fig.show()

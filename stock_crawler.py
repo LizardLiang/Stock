@@ -60,8 +60,7 @@ def get_web_data(serial, ip="0", year=2001, month=9):
                         data[8],
                     )
                 except Exception as ex:
-                    print(ex)
-                    return 0
+                    pass
         except Exception as ex:
             pass
         return 0

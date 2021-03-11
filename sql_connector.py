@@ -6,7 +6,7 @@ db_setting = {
     "host": "127.0.0.1",
     "port": 3306,
     "user": "root",
-    "password": "password",
+    "password": "ru.4gj65k3",
     "db": "mysql_test",
     "charset": "utf8",
 }
@@ -121,9 +121,10 @@ def delete_stock_table(conn, id):
         conn.close()
 
 
-def check_date(id, year, month):
+def check_date(id, year, month, day):
     m = str(month) if month > 9 else "0" + str(month)
-    date = str(year) + "/" + m
+    d = str(day) if day > 9 else "0" + str(day)
+    date = str(year) + "/" + m + "/" + d
     date = StringToDate(date)
     d_list = []
     conn = connect_to_sql()
